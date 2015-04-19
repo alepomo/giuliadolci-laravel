@@ -205,13 +205,13 @@ p, h1, h2, h3, small, li {
   margin-top: 120px;
   text-align: center;
 }
-.description {
+.post .text {
   display: inline-block;
   width: 70%;
   text-align: center;
   margin-bottom: 96px;
 }
-.description {
+.post .text {
   a,
   a:link,
   a:visited,
@@ -226,8 +226,11 @@ p, h1, h2, h3, small, li {
     border-bottom: 0;
   }
 }
-.title {
-  margin-bottom: 24px;
+.post .description {
+  margin-top: 24px;
+}
+.post .notes {
+  margin-top: 24px;
 }
 
 

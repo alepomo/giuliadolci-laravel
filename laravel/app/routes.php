@@ -28,3 +28,24 @@ Route::get('/{category}', function( $category )
     ->with('category', $category );
 });
 
+// ------------------------------------------------------------
+// POST
+// ------------------------------------------------------------
+
+Route::get('/{category}/{post}', function( $category, $post )
+{
+  $category = Category::whereName( $category )->firstOrFail();
+  $post = Post::whereCategory( $category->id )
+    ->whereSlug( $post )
+    ->firstOrFail();
+  return View::make('single')
+    ->with('title_tag', $post->title )
+    ->with('category', $category )
+    ->with('post', $post );
+});
+Route::get('/{category}/{post}/create', function(){});
+Route::post('/{category}/{post}');
+Route::get('/{category}/{post}/edit');
+Route::put('/{category}/{post}');
+Route::get('/{category}/{post}/delete');
+Route::delete('/{category}/{post}');
