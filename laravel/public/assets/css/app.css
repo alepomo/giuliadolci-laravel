@@ -1,0 +1,325 @@
+@import url(reset.css);
+.bordered {
+  border: 2px solid red;
+}
+
+section {
+  width: 100%;
+}
+
+.section-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.cf {
+  display: block;
+  zoom: 1;
+}
+.cf:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+body {
+  font-size: 100%;
+  font-size: 16px;
+  line-height: 1.25em;
+  letter-spacing: 1px;
+  padding: 0;
+  background-color: #fff;
+}
+
+::selection {
+  background: #ffe5cc;
+  /* WebKit/Blink Browsers */
+}
+
+::-moz-selection {
+  background: #ffe5cc;
+  /* Gecko Browsers */
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: 2px solid #000;
+}
+
+p {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+small {
+  display: inline-block;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+em {
+  font-style: italic;
+  display: inline-block;
+}
+
+strong {
+  font-weight: bold;
+  display: inline-block;
+}
+
+.p1 {
+  font-size: 36px;
+  line-height: 125%;
+  font-weight: bold;
+}
+
+.p2 {
+  font-size: 24px;
+  line-height: 125%;
+}
+
+.p3 {
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.underline, p a,
+p a:link,
+p a:visited,
+p a:hover,
+p a:active, h1 a,
+h1 a:link,
+h1 a:visited,
+h1 a:hover,
+h1 a:active, h2 a,
+h2 a:link,
+h2 a:visited,
+h2 a:hover,
+h2 a:active, h3 a,
+h3 a:link,
+h3 a:visited,
+h3 a:hover,
+h3 a:active, small a,
+small a:link,
+small a:visited,
+small a:hover,
+small a:active, li a,
+li a:link,
+li a:visited,
+li a:hover,
+li a:active {
+  border-bottom: 1px solid #000;
+}
+
+a.line-through {
+  text-decoration: line-through;
+}
+
+.hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.header {
+  display: block;
+  padding-top: 24px;
+  padding-bottom: 12px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  background-color: #fff;
+}
+
+.header a,
+.header a:link,
+.header a:visited,
+.header a:active {
+  border: none;
+}
+.header h2 {
+  margin: 0;
+}
+.header .section-container {
+  position: relative;
+}
+
+.header-A {
+  position: absolute;
+  left: 0;
+  height: 40px;
+}
+
+.header-B {
+  width: 100%;
+  text-align: center;
+}
+
+.header-C {
+  position: absolute;
+  right: 0;
+  text-align: right;
+}
+
+.showcase,
+.about,
+.post {
+  width: 100%;
+  margin-top: 120px;
+  text-align: center;
+}
+
+.description {
+  display: inline-block;
+  width: 70%;
+  text-align: center;
+  margin-bottom: 96px;
+}
+
+.description a,
+.description a:link,
+.description a:visited,
+.description a:hover,
+.description a:active {
+  font-family: "acta-display";
+  color: #000;
+  text-decoration: none;
+  border-bottom: 2px solid #000;
+}
+.description a:hover {
+  border-bottom: 0;
+}
+
+.title {
+  margin-bottom: 24px;
+}
+
+.showcase img {
+  max-width: 100%;
+  margin-bottom: 48px;
+}
+
+.slider {
+  width: 100%;
+  margin-top: 48px;
+  overflow: hidden;
+}
+
+.slideshow {
+  width: 100%;
+  position: relative;
+}
+
+.slideshow > li {
+  margin: 0 auto;
+}
+
+.slideshow > li > img {
+  width: 100%;
+  height: auto;
+}
+
+.slideshow-ready > li {
+  float: left;
+}
+
+.slideshow-ready .prev,
+.slideshow-ready .next {
+  cursor: pointer;
+}
+
+.masonry-container {
+  margin-top: 120px;
+}
+
+.gutter-sizer {
+  width: 8%;
+}
+
+.grid-sizer {
+  width: 46%;
+}
+
+.masonry-item {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.masonry-item-description {
+  margin-top: 24px;
+  margin-bottom: 48px;
+  width: 84%;
+}
+
+.masonry-item-description p {
+  text-align: center;
+}
+
+.masonry-item-image {
+  position: relative;
+  width: 84%;
+  text-align: center;
+}
+
+.masonry-item-image img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+.img-shield {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../img/shield.png");
+}
+
+.masonry-item-image .vertical-text {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  -webkit-transform-origin: center center;
+  -moz-transform-origin: center center;
+  -ms-transform-origin: center center;
+  -o-transform-origin: center center;
+  font-size: 10px;
+  line-height: 100%;
+}
+
+@media only screen and (min-width: 960px) {
+  .masonry-item {
+    width: 50%;
+  }
+
+  .about-description {
+    width: 80%;
+  }
+
+  .slideshow > li {
+    width: 860px;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .logo {
+    background: url("../img/giulia-dolci-logo-@2X.png");
+    background-size: contain;
+  }
+}
+
+/*# sourceMappingURL=app.css.map */

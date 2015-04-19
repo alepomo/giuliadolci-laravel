@@ -1,0 +1,370 @@
+@import 'reset.css';
+
+// - - - - - - - - - - - - - - - - - - 
+// VARIABLES
+// - - - - - - - - - - - - - - - - - - 
+
+// colors
+$text-color:          #000;
+$link-color:          $text-color;
+$placeholder-color:   #dfdfd5;
+$bg-color:            #fff;
+
+// useful to debug
+.bordered {
+  border: 2px solid red;
+}
+
+
+// - - - - - - - - - - - - - - - - - - 
+// GRID
+// - - - - - - - - - - - - - - - - - - 
+
+$columnNum:       12;
+$columnWidth:     50px;
+$gutterWidth:     40px;
+$containerWidth:  ( $columnWidth * $columnNum ) + ( $gutterWidth * ( $columnNum - 1 ) );
+
+@mixin columnWidth( $numOfColumn ) {
+  width: $numOfColumn * $columnWidth + ($numOfColumn - 1) * $gutterWidth;
+}
+@mixin columnMarginLeft( $numOfColumn ) {
+  margin-left: $numOfColumn * ( $columnWidth + $gutterWidth );
+}
+@mixin rotate ($deg) {
+	-webkit-transform: rotate($deg);
+	-moz-transform: 	 rotate($deg);
+	-ms-transform: 		 rotate($deg);
+	-o-transform: 		 rotate($deg);
+}
+@mixin transform-origin ($x:center, $y:center) {
+	-webkit-transform-origin: $x $y;
+	-moz-transform-origin:    $x $y;
+	-ms-transform-origin:     $x $y;
+	-o-transform-origin:      $x $y;
+}
+
+section {
+  width: 100%;
+}
+.section-container {
+  width: 80%;
+  margin: 0 auto;
+}
+.cf {
+  display: block;
+  zoom: 1;
+
+  &:after {
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+
+// - - - - - - - - - - - - - - - - - - 
+// LAYOUT
+// - - - - - - - - - - - - - - - - - - 
+
+body {
+  font-size: 100%;
+  font-size: 16px;
+  line-height: 1.25em;
+  letter-spacing: 1px;
+  padding: 0;
+  background-color: $bg-color;
+}
+::selection {
+  background: #ffe5cc; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #ffe5cc; /* Gecko Browsers */
+}
+
+// - - - - - - - - - - - - - - - - - - 
+// TYPO
+// - - - - - - - - - - - - - - - - - - 
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: $link-color;
+  text-decoration: none;
+}
+a:hover {
+  border-bottom: 2px solid $link-color;
+}
+p {
+  font-size: 18px;
+  line-height: 28px;
+}
+small {
+  display: inline-block;
+  font-size: 13px;
+  line-height: 20px;
+}
+em {
+  font-style: italic;
+  display: inline-block;
+}
+strong {
+  font-weight: bold;
+  display: inline-block;
+}
+.p1 {
+  font-size: 36px;
+  line-height: 125%;
+  font-weight: bold;
+}
+.p2 {
+  font-size: 24px;
+  line-height: 125%;
+}
+.p3 {
+  font-size: 16px;
+  line-height: 150%;
+}
+
+// TYPO CUSTOM CLASSES
+
+.underline {
+  border-bottom: 1px solid $text-color;
+};
+a.line-through {
+  text-decoration: line-through;
+}
+p, h1, h2, h3, small, li {
+  a,
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    @extend .underline;
+  }
+}
+.hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// - - - - - - - - - - - - - - - - - - 
+// HEADER
+// - - - - - - - - - - - - - - - - - - 
+
+.header {
+  display: block;
+  padding-top: 24px;
+  padding-bottom: 12px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  background-color: $bg-color;
+}
+  .header {
+    a,
+    a:link,
+    a:visited,
+    a:active {
+      border: none;
+    }
+    h2 {
+      margin: 0;
+    }
+    .section-container {
+      position: relative;
+    }
+  }
+.header-A {
+  position: absolute; left: 0;
+  height: 40px;
+}
+.header-B {
+  width: 100%;
+  text-align: center;
+}
+.header-C {
+  position: absolute; right: 0;
+  text-align: right;
+}
+
+// - - - - - - - - - - - - - - - - - - 
+// CONTENT
+// - - - - - - - - - - - - - - - - - - 
+
+.showcase,
+.about,
+.post {
+  width: 100%;
+  margin-top: 120px;
+  text-align: center;
+}
+.description {
+  display: inline-block;
+  width: 70%;
+  text-align: center;
+  margin-bottom: 96px;
+}
+.description {
+  a,
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    font-family: "acta-display";
+    color: $link-color;
+    text-decoration: none;
+    border-bottom: 2px solid $link-color;
+  }
+  a:hover {
+    border-bottom: 0;
+  }
+}
+.title {
+  margin-bottom: 24px;
+}
+
+
+
+// - - - - - - - - - - - - - - - - - - 
+// SHOWCASE
+// - - - - - - - - - - - - - - - - - - 
+
+.showcase img {
+  max-width: 100%;
+  margin-bottom: 48px;
+}
+
+
+
+// - - - - - - - - - - - - - - - - - - 
+// SLIDESHOW
+// - - - - - - - - - - - - - - - - - - 
+
+
+.slider {
+  width: 100%;
+  margin-top: 48px;
+  overflow: hidden;
+}
+.slideshow {
+  width: 100%;
+  position: relative;
+}
+  .slideshow > li {
+    margin: 0 auto;
+  }
+    .slideshow > li > img {
+      width: 100%;
+      height: auto;
+    }
+// This class is useful to avoid problem with non-javascript situations
+.slideshow-ready {
+}
+  .slideshow-ready > li {
+    float: left;
+  }
+  .slideshow-ready .prev,
+  .slideshow-ready .next {
+    cursor: pointer;
+  }
+
+
+// - - - - - - - - - - - - - - - - - - 
+// POST
+// - - - - - - - - - - - - - - - - - - 
+
+
+
+// - - - - - - - - - - - - - - - - - - 
+// RELATED-MATERIAL (MASONRY)
+// - - - - - - - - - - - - - - - - - - 
+
+.masonry-container {
+  margin-top: 120px;
+}
+  .gutter-sizer { 
+    width: 8%;
+  }
+  .grid-sizer {
+    width: 46%;
+  }
+  .masonry-item {
+    //.columnWidth(6);
+    margin-bottom: 40px;
+    text-align: center;
+    //background-color: rgba(152, 143, 67, 0.51);
+  }
+  .masonry-item-description {
+    margin-top: 24px;
+    margin-bottom: 48px;
+    width: 84%;
+  }
+    .masonry-item-description p {
+      text-align: center;
+    }
+  .masonry-item-image {
+    position: relative;
+    width: 84%;
+    text-align: center;
+  }
+    .masonry-item-image img {
+      max-width: 100%;
+      height: auto;
+      display: inline-block;
+    }
+    .img-shield {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("../../img/shield.png");
+    }
+    .masonry-item-image .vertical-text {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      @include rotate (270deg);
+      @include transform-origin(center, center);
+      font-size: 10px;
+      line-height: 100%;
+    }
+
+
+
+// - - - - - - - - - - - - - - - - - - 
+// QUERIES
+// - - - - - - - - - - - - - - - - - - 
+
+@media  only screen and (min-width: 960px) {
+  .masonry-item {
+    width: 50%;
+  }
+  .about-description {
+    width: 80%;
+  }
+  .slideshow > li {
+    @include columnWidth( 10 );
+  }
+}
+@media  only screen and (min-width: 1280px) {
+  
+}
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) { 
+  .logo {
+    background: url('../img/giulia-dolci-logo-@2X.png');
+    background-size: contain;
+  }
+}
